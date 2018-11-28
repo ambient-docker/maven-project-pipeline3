@@ -3,7 +3,7 @@ pipeline {
         maven 'maven 3.6'
         jdk 'java11'
     }
-    agent any
+     agent { label 'slave1' }
     stages{
         stage('Build'){
             steps {
