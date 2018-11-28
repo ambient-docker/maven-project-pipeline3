@@ -1,4 +1,8 @@
 pipeline {
+     tools {
+        maven 'maven 3.6'
+        jdk 'java11'
+    }
     agent any
     stages{
         stage('Build'){
@@ -12,9 +16,9 @@ pipeline {
                 }
             }
         }
-        stage ('Deploy to Staging'){
+        stage ('deploy to Staging'){
             steps {
-                build job: 'Deploy-to-staging'
+                build job: 'deploy-to-staging'
             }
         }
     }
